@@ -55,6 +55,7 @@
 #[cfg(feature = "um-objidlbase")] pub mod objidlbase;
 #[cfg(feature = "um-pdh")] pub mod pdh;
 #[cfg(feature = "um-propidl")] pub mod propidl;
+#[cfg(feature = "um-propkeydef")] pub mod propkeydef;
 #[cfg(feature = "um-propsys")] pub mod propsys;
 #[cfg(feature = "um-prsht")] pub mod prsht;
 #[cfg(feature = "um-setupapi")] pub mod setupapi;

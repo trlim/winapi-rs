@@ -2,7 +2,8 @@
 // Licensed under the MIT License <LICENSE.md>
 //! Mappings for the contents of wstypes.h
 use ctypes::{c_short, c_ushort, c_double};
-use shared::minwindef::{BYTE, USHORT, ULONG};
+use shared::guiddef::{GUID};
+use shared::minwindef::{BYTE, DWORD, USHORT, ULONG};
 use shared::wtypesbase::{FLAGGED_WORD_BLOB, OLECHAR};
 use um::winnt::{LONGLONG, ULONGLONG};
 
@@ -60,6 +61,11 @@ ENUM!{enum VARENUM {
 }}
 pub const VT_ILLEGALMASKED: VARENUM = VT_BSTR_BLOB;
 pub const VT_TYPEMASK: VARENUM = VT_BSTR_BLOB;
+pub type PROPID = ULONG;
+STRUCT!{#[derive(PartialEq, Eq)] struct PROPERTYKEY {
+    fmtid: GUID,
+    pid: DWORD,
+}}
 pub type DATE = c_double;
 STRUCT!{struct CY {
     int64: LONGLONG,

@@ -101,7 +101,7 @@ headers = ["headers-shared", "headers-um", "headers-vc", "headers-winrt"]
 "shared-windef" = ["shared-minwindef", "um-winnt"]
 "shared-windowsx" = ["shared-minwindef"]
 "shared-winerror" = ["shared-minwindef"]
-"shared-wtypes" = ["shared-wtypesbase", "um-winnt"]
+"shared-wtypes" = ["shared-guiddef", "shared-wtypesbase", "um-winnt"]
 "shared-wtypesbase" = ["shared-minwindef", "shared-rpcndr", "um-winnt"]
 "headers-um" = [
     "um-audioclient",
@@ -154,6 +154,7 @@ headers = ["headers-shared", "headers-um", "headers-vc", "headers-winrt"]
     "um-objidlbase",
     "um-pdh",
     "um-propidl",
+    "um-propkeydef",
     "um-propsys",
     "um-prsht",
     "um-setupapi",
@@ -227,6 +228,7 @@ headers = ["headers-shared", "headers-um", "headers-vc", "headers-winrt"]
 "um-objidlbase" = ["shared-guiddef", "shared-minwindef", "shared-wtypesbase", "um-unknwnbase", "um-winnt"]
 "um-pdh" = ["shared-minwindef", "shared-wtypesbase", "um-winnt"]
 "um-propidl" = ["shared-minwindef", "shared-wtypes"]
+"um-propkeydef" = ["shared-guiddef", "shared-wtypes"]
 "um-propsys" = ["um-unknwnbase"]
 "um-prsht" = ["shared-basetsd", "shared-minwindef", "shared-windef", "um-winnt", "um-winuser"]
 "um-setupapi" = ["shared-basetsd", "shared-devpropdef", "shared-guiddef", "shared-minwindef", "shared-windef", "um-commctrl", "um-prsht", "um-spapidef", "um-winnt", "um-winreg", "setupapi"]
