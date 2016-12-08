@@ -52,6 +52,8 @@
 #[cfg(feature = "um-mmsystem")] pub mod mmsystem;
 #[cfg(feature = "um-ncrypt")] pub mod ncrypt;
 #[cfg(feature = "um-oaidl")] pub mod oaidl;
+#[cfg(feature = "um-objbase")] pub mod objbase;
+#[cfg(feature = "um-objidl")] pub mod objidl;
 #[cfg(feature = "um-objidlbase")] pub mod objidlbase;
 #[cfg(feature = "um-pdh")] pub mod pdh;
 #[cfg(feature = "um-propidl")] pub mod propidl;

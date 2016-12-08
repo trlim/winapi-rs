@@ -151,6 +151,7 @@ headers = ["headers-shared", "headers-um", "headers-vc", "headers-winrt"]
     "um-mmsystem",
     "um-ncrypt",
     "um-oaidl",
+    "um-objidl",
     "um-objidlbase",
     "um-pdh",
     "um-propidl",
@@ -182,7 +183,7 @@ headers = ["headers-shared", "headers-um", "headers-vc", "headers-winrt"]
 "um-audiosessiontypes" = ["shared-minwindef"]
 "um-cfgmgr32" = ["shared-basetsd", "shared-guiddef", "shared-minwindef", "um-winnt"]
 "um-cguid" = ["shared-guiddef"]
-"um-combaseapi" = ["shared-basetsd", "shared-minwindef", "shared-wtypesbase", "um-objidlbase", "ole32"]
+"um-combaseapi" = ["shared-basetsd", "shared-minwindef", "shared-wtypesbase", "um-objidl", "um-objidlbase", "um-unknwnbase", "ole32"]
 "um-commctrl" = ["shared-basetsd", "shared-guiddef", "shared-minwindef", "shared-windef", "um-minwinbase", "um-objidlbase", "um-winnt", "um-winuser", "vc-vcruntime"]
 "um-commdlg" = ["shared-basetsd", "shared-minwindef", "shared-windef", "um-prsht", "um-unknwnbase", "um-wingdi", "um-winnt", "um-winuser"]
 "um-consoleapi" = ["shared-minwindef", "um-wincon", "um-winnt", "kernel32"]
@@ -225,6 +226,8 @@ headers = ["headers-shared", "headers-um", "headers-vc", "headers-winrt"]
 "um-mmsystem" = ["shared-basetsd", "shared-minwindef", "shared-mmreg", "um-winnt"]
 "um-ncrypt" = ["shared-basetsd", "shared-sspi", "ncrypt"]
 "um-oaidl" = ["shared-basetsd", "shared-guiddef", "shared-minwindef", "shared-wtypes", "shared-wtypesbase", "um-unknwnbase", "um-winnt"]
+"um-objbase" = ["shared-minwindef", "um-combaseapi", "um-winnt", "ole32"]
+"um-objidl" = ["shared-basetsd", "shared-guiddef", "shared-minwindef", "shared-wtypesbase", "um-objidlbase", "um-unknwnbase", "um-winnt"]
 "um-objidlbase" = ["shared-guiddef", "shared-minwindef", "shared-wtypesbase", "um-unknwnbase", "um-winnt"]
 "um-pdh" = ["shared-minwindef", "shared-wtypesbase", "um-winnt"]
 "um-propidl" = ["shared-minwindef", "shared-wtypes"]
