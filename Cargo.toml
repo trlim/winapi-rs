@@ -240,7 +240,7 @@ headers = ["headers-shared", "headers-um", "headers-vc", "headers-winrt"]
 "um-shellapi" = ["shared-guiddef", "shared-minwindef", "shared-windef", "um-winnt"]
 "um-spapidef" = ["shared-minwindef", "um-winnt"]
 "um-strmif" = ["um-winnt"]
-"um-unknwnbase" = ["shared-guiddef", "shared-minwindef", "um-winnt"]
+"um-unknwnbase" = ["shared-guiddef", "shared-minwindef", "um-winnt", "uuid"]
 "um-vsserror" = ["um-winnt"]
 "um-winbase" = ["shared-basetsd", "shared-guiddef", "shared-minwindef", "um-cfgmgr32", "um-winnt"]
 "um-wincodec" = ["shared-basetsd", "shared-guiddef", "shared-minwindef", "um-dcommon", "um-unknwnbase", "um-winnt"]
@@ -275,10 +275,12 @@ libraries = [
     "ncrypt",
     "ole32",
     "setupapi",
+    "uuid",
     "wininet",
 ]
 "kernel32" = []
 "ole32" = []
 "ncrypt" = []
 "setupapi" = []
+"uuid" = []
 "wininet" = []

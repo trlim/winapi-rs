@@ -10,6 +10,7 @@ const LIBS: &'static [&'static str] = &[
     "ncrypt",
     "ole32",
     "setupapi",
+    "uuid",
     "wininet",
 ];
 fn main() {
