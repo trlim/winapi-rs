@@ -61,6 +61,7 @@ headers = ["headers-shared", "headers-um", "headers-vc", "headers-winrt"]
     "shared-rpcndr",
     "shared-sspi",
     "shared-usb",
+    "shared-usbiodef",
     "shared-windef",
     "shared-windowsx",
     "shared-winerror",
@@ -98,6 +99,7 @@ headers = ["headers-shared", "headers-um", "headers-vc", "headers-winrt"]
 "shared-rpcndr" = []
 "shared-sspi" = ["shared-ntdef"]
 "shared-usb" = ["shared-minwindef", "um-winnt"]
+"shared-usbiodef" = ["shared-guiddef", "shared-minwindef", "um-winioctl", "um-winnt"]
 "shared-windef" = ["shared-minwindef", "um-winnt"]
 "shared-windowsx" = ["shared-minwindef"]
 "shared-winerror" = ["shared-minwindef"]

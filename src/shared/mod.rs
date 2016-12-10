@@ -36,6 +36,7 @@
 #[cfg(feature = "shared-rpcndr")] pub mod rpcndr;
 #[cfg(feature = "shared-sspi")]  pub mod sspi;
 #[cfg(feature = "shared-usb")] pub mod usb;
+#[cfg(feature = "shared-usbiodef")] pub mod usbiodef;
 #[cfg(feature = "shared-windef")] pub mod windef;
 #[cfg(feature = "shared-windowsx")] pub mod windowsx;
 #[cfg(feature = "shared-winerror")] pub mod winerror;
