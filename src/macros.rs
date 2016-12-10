@@ -27,6 +27,7 @@ macro_rules! MAKEFOURCC {
         ($a as u32) | (($b as u32) << 8) | (($c as u32) << 16) | (($d as u32) << 24)
     }
 }
+#[macro_export]
 macro_rules! DEFINE_GUID {
     (
         $name:ident, $l:expr, $w1:expr, $w2:expr,
