@@ -55,7 +55,6 @@ DEFINE_PROPERTYKEY!(PKEY_AudioEndpointSettings_MenuText,
     0x14242002, 0x0320, 0x4de4, 0x95, 0x55, 0xa7, 0xd8, 0x2b, 0x73, 0xc2, 0x86, 0);
 DEFINE_PROPERTYKEY!(PKEY_AudioEndpointSettings_LaunchContract,
     0x14242002, 0x0320, 0x4de4, 0x95, 0x55, 0xa7, 0xd8, 0x2b, 0x73, 0xc2, 0x86, 1);
-
 STRUCT!{struct DIRECTX_AUDIO_ACTIVATION_PARAMS {
     cbDirectXAudioActivationParams: DWORD,
     guidAudioSession: GUID,
@@ -100,8 +99,6 @@ DEFINE_GUID!(DEVINTERFACE_MIDI_OUTPUT,
 DEFINE_GUID!(DEVINTERFACE_MIDI_INPUT,
     0x504be32c, 0xccf6, 0x4d2c, 0xb7, 0x3f, 0x6f, 0x8b, 0x37, 0x47, 0xe2, 0x2b);
 
-DEFINE_GUID!(IID_IMMNotificationClient,
-    0x7991EEC9, 0x7E89, 0x4D85, 0x83, 0x90, 0x6C, 0x70, 0x3C, 0xEC, 0x60, 0xC0);
 RIDL!(
 interface IMMNotificationClient(IMMNotificationClientVtbl): IUnknown(IUnknownVtbl) {
     fn OnDeviceStateChanged( 
@@ -130,8 +127,6 @@ interface IMMNotificationClient(IMMNotificationClientVtbl): IUnknown(IUnknownVtb
     ) -> HRESULT
 }
 );
-DEFINE_GUID!(IID_IMMDevice,
-    0xD666063F, 0x1587, 0x4E43, 0x81, 0xF1, 0xB9, 0x48, 0xE8, 0x07, 0x36, 0x3F);
 RIDL!(
 interface IMMDevice(IMMDeviceVtbl): IUnknown(IUnknownVtbl) {
     fn Activate(
@@ -156,8 +151,6 @@ interface IMMDevice(IMMDeviceVtbl): IUnknown(IUnknownVtbl) {
     ) -> HRESULT
 }
 );
-DEFINE_GUID!(IID_IMMDeviceCollection,
-    0x0BD7A1BE, 0x7A1A, 0x44DB, 0x83, 0x97, 0xCC, 0x53, 0x92, 0x38, 0x7B, 0x5E);
 RIDL!(
 interface IMMDeviceCollection(IMMDeviceCollectionVtbl): IUnknown(IUnknownVtbl) {
     fn GetCount(
@@ -171,8 +164,6 @@ interface IMMDeviceCollection(IMMDeviceCollectionVtbl): IUnknown(IUnknownVtbl) {
     ) -> HRESULT
 }
 );
-DEFINE_GUID!(IID_IMMEndpoint,
-    0x1BE09788, 0x6894, 0x4089, 0x85, 0x86, 0x9A, 0x2A, 0x6C, 0x26, 0x5A, 0xC5);
 RIDL!(
 interface IMMEndpoint(IMMEndpointVtbl): IUnknown(IUnknownVtbl) {
     fn GetDataFlow(
@@ -181,8 +172,6 @@ interface IMMEndpoint(IMMEndpointVtbl): IUnknown(IUnknownVtbl) {
     ) -> HRESULT
 }
 );
-DEFINE_GUID!(IID_IMMDeviceEnumerator, 0xA95664D2, 0x9614, 0x4F35,
-    0xA7, 0x46, 0xDE, 0x8D, 0xB6, 0x36, 0x17, 0xE6);
 RIDL!(
 interface IMMDeviceEnumerator(IMMDeviceEnumeratorVtbl): IUnknown(IUnknownVtbl) {
     fn EnumAudioEndpoints(
@@ -212,8 +201,6 @@ interface IMMDeviceEnumerator(IMMDeviceEnumeratorVtbl): IUnknown(IUnknownVtbl) {
     ) -> HRESULT
 }
 );
-DEFINE_GUID!(IID_IMMDeviceActivator,
-    0x3B0D0EA4, 0xD0A9, 0x4B0E, 0x93, 0x5B, 0x09, 0x51, 0x67, 0x46, 0xFA, 0xC0);
 RIDL!(
 interface IMMDeviceActivator(IMMDeviceActivatorVtbl): IUnknown(IUnknownVtbl) {
     fn Activate( 
@@ -225,8 +212,6 @@ interface IMMDeviceActivator(IMMDeviceActivatorVtbl): IUnknown(IUnknownVtbl) {
     ) -> HRESULT
 }
 );
-DEFINE_GUID!(IID_IActivateAudioInterfaceCompletionHandler,
-    0x41D949AB, 0x9862, 0x444A, 0x80, 0xF6, 0xC2, 0x61, 0x33, 0x4D, 0xA5, 0xEB);
 RIDL!(
 interface IActivateAudioInterfaceCompletionHandler(IActivateAudioInterfaceCompletionHandlerVtbl): IUnknown(IUnknownVtbl) {
     fn ActivateCompleted(
@@ -235,8 +220,6 @@ interface IActivateAudioInterfaceCompletionHandler(IActivateAudioInterfaceComple
     ) -> HRESULT
 }
 );
-DEFINE_GUID!(IID_IActivateAudioInterfaceAsyncOperation,
-    0x72A22D78, 0xCDE4, 0x431D, 0xB8, 0xCC, 0x84, 0x3A, 0x71, 0x19, 0x9B, 0x6D);
 RIDL!(
 interface IActivateAudioInterfaceAsyncOperation(IActivateAudioInterfaceAsyncOperationVtbl): IUnknown(IUnknownVtbl) {
     fn GetActivateResult( 
@@ -260,6 +243,3 @@ STRUCT!{struct AudioExtensionParams {
     pPnpInterface: *mut IMMDevice,
     pPnpDevnode: *mut IMMDevice,
 }}
-
-DEFINE_GUID!(CLSID_MMDeviceEnumerator, 0xBCDE0395, 0xE52F, 0x467C,
-    0x8E, 0x3D, 0xC4, 0x57, 0x92, 0x91, 0x69, 0x2E);
