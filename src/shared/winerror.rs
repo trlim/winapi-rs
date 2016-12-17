@@ -1,7 +1,7 @@
 // Copyright © 2015, Peter Atashian
 // Licensed under the MIT License <LICENSE.md>
 //! error code definitions for the Win32 API functions
-use ctypes::{c_long};
+use ctypes::{c_long, c_ulong};
 use shared::minwindef::{DWORD};
 
 #[inline]
@@ -2945,6 +2945,20 @@ pub const SEVERITY_ERROR: HRESULT = 1;
 #[inline]
 pub fn MAKE_HRESULT(sev: HRESULT, fac: HRESULT, code: HRESULT) -> HRESULT {
     (sev << 31) | (fac << 16) | code
+}
+pub const FACILITY_NT_BIT: HRESULT = 0x10000000;
+#[inline]
+pub fn HRESULT_FROM_WIN32(x: c_ulong) -> HRESULT {
+    let hr = x as HRESULT;
+    if hr <= 0 {
+        hr
+    } else {
+        ((x & 0x0000FFFF) | ((FACILITY_WIN32 as u32) << 16) | 0x80000000) as HRESULT
+    }
+}
+#[inline]
+pub fn HRESULT_FROM_NT(x: c_ulong) -> HRESULT {
+    (x | FACILITY_NT_BIT as u32) as HRESULT
 }
 pub type HRESULT = c_long;
 pub const NOERROR: HRESULT = 0;
