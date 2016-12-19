@@ -31,6 +31,7 @@
 #[cfg(feature = "shared-lmcons")] pub mod lmcons;
 #[cfg(feature = "shared-minwindef")] pub mod minwindef;
 #[cfg(feature = "shared-mmreg")] pub mod mmreg;
+#[cfg(feature = "shared-ntddser")] pub mod ntddser;
 #[cfg(feature = "shared-ntdef")] pub mod ntdef;
 #[cfg(feature = "shared-ntstatus")] pub mod ntstatus;
 #[cfg(feature = "shared-rpcndr")] pub mod rpcndr;
