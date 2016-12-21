@@ -10,6 +10,7 @@
 #[cfg(feature = "um-cfgmgr32")] pub mod cfgmgr32;
 #[cfg(feature = "um-cguid")] pub mod cguid;
 #[cfg(feature = "um-combaseapi")] pub mod combaseapi;
+#[cfg(feature = "um-coml2api")] pub mod coml2api;
 #[cfg(feature = "um-commctrl")] pub mod commctrl;
 #[cfg(feature = "um-commdlg")] pub mod commdlg;
 #[cfg(feature = "um-consoleapi")] pub mod consoleapi;
