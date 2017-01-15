@@ -108,26 +108,26 @@ DEFINE_GUID!(DEVINTERFACE_MIDI_INPUT,
 RIDL!(
 interface IMMNotificationClient(IMMNotificationClientVtbl): IUnknown(IUnknownVtbl) {
     fn OnDeviceStateChanged( 
-        &mut self,
+        &self,
         pwstrDeviceId: LPCWSTR,
         dwNewState: DWORD
     ) -> HRESULT,
     fn OnDeviceAdded(
-        &mut self,
+        &self,
         pwstrDeviceId: LPCWSTR
     ) -> HRESULT,
     fn OnDeviceRemoved(
-        &mut self,
+        &self,
         pwstrDeviceId: LPCWSTR
     ) -> HRESULT,
     fn OnDefaultDeviceChanged(
-        &mut self,
+        &self,
         flow: EDataFlow,
         role: ERole,
         pwstrDefaultDeviceId: LPCWSTR
     ) -> HRESULT,
     fn OnPropertyValueChanged( 
-        &mut self,
+        &self,
         pwstrDeviceId: LPCWSTR,
         key: PROPERTYKEY
     ) -> HRESULT
@@ -136,23 +136,23 @@ interface IMMNotificationClient(IMMNotificationClientVtbl): IUnknown(IUnknownVtb
 RIDL!(
 interface IMMDevice(IMMDeviceVtbl): IUnknown(IUnknownVtbl) {
     fn Activate(
-        &mut self,
+        &self,
         iid: REFIID,
         dwClsCtx: DWORD,
         pActivationParams: *mut PROPVARIANT,
         ppInterface: *mut LPVOID
     ) -> HRESULT,
     fn OpenPropertyStore(
-        &mut self,
+        &self,
         stgmAccess: DWORD,
         ppProperties: *mut *mut IPropertyStore
     ) -> HRESULT,
     fn GetId(
-        &mut self,
+        &self,
         ppstrId: *mut LPWSTR
     ) -> HRESULT,
     fn GetState(
-        &mut self,
+        &self,
         pdwState: *mut DWORD
     ) -> HRESULT
 }
@@ -160,11 +160,11 @@ interface IMMDevice(IMMDeviceVtbl): IUnknown(IUnknownVtbl) {
 RIDL!(
 interface IMMDeviceCollection(IMMDeviceCollectionVtbl): IUnknown(IUnknownVtbl) {
     fn GetCount(
-        &mut self,
+        &self,
         pcDevices: *const UINT
     ) -> HRESULT,
     fn Item(
-        &mut self,
+        &self,
         nDevice: UINT,
         ppDevice: *mut *mut IMMDevice
     ) -> HRESULT
@@ -173,7 +173,7 @@ interface IMMDeviceCollection(IMMDeviceCollectionVtbl): IUnknown(IUnknownVtbl) {
 RIDL!(
 interface IMMEndpoint(IMMEndpointVtbl): IUnknown(IUnknownVtbl) {
     fn GetDataFlow(
-        &mut self,
+        &self,
         pDataFlow: *mut EDataFlow
     ) -> HRESULT
 }
@@ -181,28 +181,28 @@ interface IMMEndpoint(IMMEndpointVtbl): IUnknown(IUnknownVtbl) {
 RIDL!(
 interface IMMDeviceEnumerator(IMMDeviceEnumeratorVtbl): IUnknown(IUnknownVtbl) {
     fn EnumAudioEndpoints(
-        &mut self,
+        &self,
         dataFlow: EDataFlow,
         dwStateMask: DWORD,
         ppDevices: *mut *mut IMMDeviceCollection
     ) -> HRESULT,
     fn GetDefaultAudioEndpoint(
-        &mut self,
+        &self,
         dataFlow: EDataFlow,
         role: ERole,
         ppEndpoint: *mut *mut IMMDevice
     ) -> HRESULT,
     fn GetDevice(
-        &mut self,
+        &self,
         pwstrId: LPCWSTR,
         ppDevices: *mut *mut IMMDevice
     ) -> HRESULT,
     fn RegisterEndpointNotificationCallback(
-        &mut self,
+        &self,
         pClient: *mut IMMNotificationClient
     ) -> HRESULT,
     fn UnregisterEndpointNotificationCallback(
-        &mut self,
+        &self,
         pClient: *mut IMMNotificationClient
     ) -> HRESULT
 }
@@ -210,7 +210,7 @@ interface IMMDeviceEnumerator(IMMDeviceEnumeratorVtbl): IUnknown(IUnknownVtbl) {
 RIDL!(
 interface IMMDeviceActivator(IMMDeviceActivatorVtbl): IUnknown(IUnknownVtbl) {
     fn Activate( 
-        &mut self,
+        &self,
         iid: REFIID,
         pDevice: *mut IMMDevice,
         pActivationParams: *mut PROPVARIANT,
@@ -221,7 +221,7 @@ interface IMMDeviceActivator(IMMDeviceActivatorVtbl): IUnknown(IUnknownVtbl) {
 RIDL!(
 interface IActivateAudioInterfaceCompletionHandler(IActivateAudioInterfaceCompletionHandlerVtbl): IUnknown(IUnknownVtbl) {
     fn ActivateCompleted(
-        &mut self,
+        &self,
         activateOperation: *mut IActivateAudioInterfaceAsyncOperation
     ) -> HRESULT
 }
@@ -229,7 +229,7 @@ interface IActivateAudioInterfaceCompletionHandler(IActivateAudioInterfaceComple
 RIDL!(
 interface IActivateAudioInterfaceAsyncOperation(IActivateAudioInterfaceAsyncOperationVtbl): IUnknown(IUnknownVtbl) {
     fn GetActivateResult( 
-        &mut self,
+        &self,
         activateResult: *mut HRESULT,
         activatedInterface: *mut *mut IUnknown
     ) -> HRESULT

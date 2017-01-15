@@ -17,26 +17,26 @@ pub type IPropertyDescriptionList = IUnknown; // TODO
 RIDL!(
 interface IPropertyStore(IPropertyStoreVtbl): IUnknown(IUnknownVtbl) {
     fn GetCount( 
-        &mut self,
+        &self,
         cProps: *mut DWORD
     ) -> HRESULT,
     fn GetAt( 
-        &mut self,
+        &self,
         iProp: DWORD,
         pkey: *mut PROPERTYKEY
     ) -> HRESULT,
     fn GetValue( 
-        &mut self,
+        &self,
         key: REFPROPERTYKEY,
         pv: *mut PROPVARIANT
     ) -> HRESULT,
     fn SetValue( 
-        &mut self,
+        &self,
         key: REFPROPERTYKEY,
         propvar: REFPROPVARIANT
     ) -> HRESULT,
     fn Commit(
-        &mut self
+        &self
     ) -> HRESULT
 }
 );
